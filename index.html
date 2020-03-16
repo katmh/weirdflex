@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content='Generate variations of "weird flex but okay"'>
+        <title>weirdflex.me | Generate variations of "weird flex but okay"</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="inner-container">
+                <h1 id="phrase">
+                    <span id="weird">weird</span>
+                    <span id="flex">flex</span>
+                    but
+                    <span id="okay">okay</span>
+                </h1>
+    
+                <a href="javascript:void(0)" id="regenerate-button" class="button">get another flex 💪</a>
+                
+                <p>Made by <a href="https://katmh.com">Katherine Huang</a></p>
+            </div>
+        </div>
+
+        <script>
+        var weirdSynonyms = ["weird", "odd", "bizarre", "eccentric", "funky", "kooky", "peculiar", "strange", "queer", "oddball", "uncanny", "outlandish"],
+            flexSynonyms = ["flex", "boast", "brag", "braggadocio", "exaggeration", "vaunt", "grandiloquence"],
+            okaySynonyms = ["okay", "acceptable", "satisfactory", "alright", "approved", "correct", "fair", "fine", "permitted", "accurate", "adequate", "convenient", "passable", "tolerable", "let's toast", "👌", "🆗"];
+
+        var btn = document.getElementById('regenerate-button');
+
+        var weird = document.getElementById('weird'),
+            flex = document.getElementById('flex'),
+            okay = document.getElementById('okay');
+        btn.addEventListener('click', function() {
+            replaceWithSynonym(weird, weirdSynonyms);
+            replaceWithSynonym(flex, flexSynonyms);
+            replaceWithSynonym(okay, okaySynonyms);
+        });
+
+        function replaceWithSynonym(word, synonymList) {
+            word.innerText = synonymList[Math.floor(Math.random() * synonymList.length)];
+        }
+        </script>
+    </body>
+</html>
