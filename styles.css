@@ -22,7 +22,7 @@
 
 h1 {
     font: bold 4rem Inter, Helvetica, Arial, sans-serif;
-    margin: 2rem 0;
+    margin: 2rem;
 }
 
 a, p {
@@ -56,3 +56,25 @@ p {
 p a {
     color: #6e6a72;
 }
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 10rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+  }
