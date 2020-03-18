@@ -24,7 +24,7 @@
         <h1 id="phrase">
             <span id="weird">weird</span>
             <span id="flex">flex</span>
-            but
+            <span id="but">but</span>
             <span id="okay">okay</span>
         </h1>
 
@@ -38,16 +38,19 @@
         <script>
         var weirdSynonyms = ["weird", "odd", "bizarre", "eccentric", "funky", "kooky", "peculiar", "strange", "queer", "oddball", "uncanny", "outlandish"],
             flexSynonyms = ["flex", "boast", "brag", "braggadocio", "exaggeration", "vaunt", "grandiloquence"],
+            butSynonyms = ["but", "yet"],
             okaySynonyms = ["okay", "acceptable", "satisfactory", "alright", "approved", "correct", "fair", "fine", "permitted", "accurate", "adequate", "convenient", "passable", "tolerable", "let's toast", "👌", "🆗"];
 
         var btn = document.getElementById('regenerate-button');
 
         var weird = document.getElementById('weird'),
             flex = document.getElementById('flex'),
+            but = document.getElementById('but'),
             okay = document.getElementById('okay');
         btn.addEventListener('click', function() {
             replaceWithSynonym(weird, weirdSynonyms);
             replaceWithSynonym(flex, flexSynonyms);
+            replaceWithSynonym(but, butSynonyms);
             replaceWithSynonym(okay, okaySynonyms);
         });
 
