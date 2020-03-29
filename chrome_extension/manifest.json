@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Weird Flex New Tab Page",
+  "description": "Get a variation of \"weird flex but okay\" on your new tab page!",
+  "version": "0.1",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "192": "icon192.png"
+  },
+  "permissions": ["management"],
+  "chrome_url_overrides": {
+    "newtab": "new_tab.html"
+  }
+}

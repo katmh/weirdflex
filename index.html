@@ -1,62 +1,123 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="description" content='Generate variations of "weird flex but okay"'>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <title>weirdflex.me | Generate variations of "weird flex but okay"</title>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content='Generate variations of "weird flex but okay"'
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>weirdflex.me | Generate variations of "weird flex but okay"</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap"
+      rel="stylesheet"
+    />
 
-        <meta property="og:title" content="weirdflex.me">
-        <meta property="og:description" content='💪 Generate synonymous variations of "weird flex but okay"'>
-        <meta property="og:image" content="https://weirdflex.me/screenshot.png">
-        <meta property="og:url" content="https://weirdflex.me">
+    <meta property="og:title" content="weirdflex.me" />
+    <meta
+      property="og:description"
+      content='💪 Generate synonymous variations of "weird flex but okay"'
+    />
+    <meta property="og:image" content="https://weirdflex.me/screenshot.png" />
+    <meta property="og:url" content="https://weirdflex.me" />
 
-        <meta name="twitter:title" content="weirdflex.me">
-        <meta name="twitter:description" content='💪 Generate synonymous variations of "weird flex but okay"'>
-        <meta name="twitter:image" content="https://weirdflex.me/screenshot.png">
-        <meta name="twitter:card" content="https://weirdflex.me/screenshot.png">
-    </head>
-    <body>
-        <h1 id="phrase">
-            <span id="weird">weird</span>
-            <span id="flex">flex</span>
-            <span id="but">but</span>
-            <span id="okay">okay</span>
-        </h1>
+    <meta name="twitter:title" content="weirdflex.me" />
+    <meta
+      name="twitter:description"
+      content='💪 Generate synonymous variations of "weird flex but okay"'
+    />
+    <meta name="twitter:image" content="https://weirdflex.me/screenshot.png" />
+    <meta name="twitter:card" content="https://weirdflex.me/screenshot.png" />
+  </head>
+  <body>
+    <h1 id="phrase">
+      <span id="weird">weird</span>
+      <span id="flex">flex</span>
+      <span id="but">but</span>
+      <span id="okay">okay</span>
+    </h1>
 
-        <a href="javascript:void(0)" id="regenerate-button" class="button">get another flex 💪</a>
-        
-        <p>
-            made by <a href="https://katmh.com">kat huang</a><br>
-            <a href="https://github.com/katavie/weirdflex">source code</a>
-        </p>
+    <a href="javascript:void(0)" id="regenerate-button" class="button"
+      >get another flex 💪</a
+    >
 
-        <script>
-        var weirdSynonyms = ["weird", "odd", "bizarre", "eccentric", "funky", "kooky", "peculiar", "strange", "queer", "oddball", "uncanny", "outlandish"],
-            flexSynonyms = ["flex", "boast", "brag", "braggadocio", "exaggeration", "vaunt", "grandiloquence"],
-            butSynonyms = ["but", "yet"],
-            okaySynonyms = ["okay", "acceptable", "satisfactory", "alright", "approved", "correct", "fair", "fine", "permitted", "accurate", "adequate", "convenient", "passable", "tolerable", "let's toast", "👌", "🆗"];
+    <p>
+      made by <a href="https://katmh.com">kat huang</a><br />
+      <a href="https://github.com/katavie/weirdflex">source code</a>
+    </p>
 
-        var btn = document.getElementById('regenerate-button');
+    <script>
+      var weirdSynonyms = [
+          "weird",
+          "odd",
+          "bizarre",
+          "eccentric",
+          "funky",
+          "kooky",
+          "peculiar",
+          "strange",
+          "queer",
+          "oddball",
+          "uncanny",
+          "outlandish"
+        ],
+        flexSynonyms = [
+          "flex",
+          "boast",
+          "brag",
+          "braggadocio",
+          "exaggeration",
+          "vaunt",
+          "grandiloquence"
+        ],
+        butSynonyms = ["but", "yet"],
+        okaySynonyms = [
+          "okay",
+          "acceptable",
+          "satisfactory",
+          "alright",
+          "approved",
+          "correct",
+          "fair",
+          "fine",
+          "permitted",
+          "accurate",
+          "adequate",
+          "convenient",
+          "passable",
+          "tolerable",
+          "let's toast",
+          "👌",
+          "🆗"
+        ];
 
-        var weird = document.getElementById('weird'),
-            flex = document.getElementById('flex'),
-            but = document.getElementById('but'),
-            okay = document.getElementById('okay');
-        btn.addEventListener('click', function() {
-            replaceWithSynonym(weird, weirdSynonyms);
-            replaceWithSynonym(flex, flexSynonyms);
-            replaceWithSynonym(but, butSynonyms);
-            replaceWithSynonym(okay, okaySynonyms);
-        });
+      var btn = document.getElementById("regenerate-button");
 
-        function replaceWithSynonym(word, synonymList) {
-            word.innerText = synonymList[Math.floor(Math.random() * synonymList.length)];
-        }
-        </script>
-    </body>
+      var weird = document.getElementById("weird"),
+        flex = document.getElementById("flex"),
+        but = document.getElementById("but"),
+        okay = document.getElementById("okay");
+      btn.addEventListener("click", function() {
+        generateVariation();
+      });
+
+      // run so that the first quote a visitor sees is already a variation
+      generateVariation();
+
+      function generateVariation() {
+        replaceWithSynonym(weird, weirdSynonyms);
+        replaceWithSynonym(flex, flexSynonyms);
+        replaceWithSynonym(but, butSynonyms);
+        replaceWithSynonym(okay, okaySynonyms);
+      }
+
+      function replaceWithSynonym(word, synonymList) {
+        word.innerText =
+          synonymList[Math.floor(Math.random() * synonymList.length)];
+      }
+    </script>
+  </body>
 </html>
