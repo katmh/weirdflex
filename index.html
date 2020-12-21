@@ -30,7 +30,7 @@
       content='💪 Generate synonymous variations of "weird flex but okay"'
     />
     <meta name="twitter:image" content="https://weirdflex.me/screenshot.png" />
-    <meta name="twitter:card" content="https://weirdflex.me/screenshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <h1 id="phrase">
@@ -62,7 +62,7 @@
           "queer",
           "oddball",
           "uncanny",
-          "outlandish"
+          "outlandish",
         ],
         flexSynonyms = [
           "flex",
@@ -71,7 +71,7 @@
           "braggadocio",
           "exaggeration",
           "vaunt",
-          "grandiloquence"
+          "grandiloquence",
         ],
         butSynonyms = ["but", "yet"],
         okaySynonyms = [
@@ -91,7 +91,7 @@
           "tolerable",
           "let's toast",
           "👌",
-          "🆗"
+          "🆗",
         ];
 
       var btn = document.getElementById("regenerate-button");
@@ -100,7 +100,7 @@
         flex = document.getElementById("flex"),
         but = document.getElementById("but"),
         okay = document.getElementById("okay");
-      btn.addEventListener("click", function() {
+      btn.addEventListener("click", function () {
         generateVariation();
       });
 
